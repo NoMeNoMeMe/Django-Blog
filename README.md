@@ -1,2 +1,2 @@
 # Django_app
- First simple Django application
+ First (and not last) Django application
