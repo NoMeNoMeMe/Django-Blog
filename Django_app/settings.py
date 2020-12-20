@@ -122,13 +122,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# uploaded files
+# uploaded files path in project
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# directory through the browser
+
+# directory path through the browser
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# login
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_GMAIL_USERNAME')
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_GMAIL_PASSWORD')
